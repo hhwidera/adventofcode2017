@@ -2,8 +2,6 @@ package com.widera.adventofcode2017.day04;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
 public class PassphrasesCheckerTest {

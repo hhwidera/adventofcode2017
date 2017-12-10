@@ -77,4 +77,14 @@ public class CircularList {
     public int multiplyingFirstTwoValuesOfList() {
         return startPoint.value() * startPoint.getNext().value();
     }
+
+    public List<Integer> spareHash() {
+        List<Integer> result = new ArrayList<>();
+        CircularListElement tempPointer = startPoint;
+        do {
+            result.add(tempPointer.value());
+            tempPointer = tempPointer.getNext();
+        } while (!startPoint.equals(tempPointer));
+        return result;
+    }
 }

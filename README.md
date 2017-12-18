@@ -2,5 +2,5 @@
 
 My solutions to https://adventofcode.com/2017
 
-Java is my language of choice for solving them with TTD and little clean code.
+Java is my language of choice for solving them with TDD, OO and little clean code.
 

@@ -25,7 +25,7 @@ public class Spinlock {
 			position.setNext(newValue);
 			movePosition(1);
 		}
-//		printBuffer();
+		printBuffer();
 	}
 
 	private void movePosition(final int steps) {

@@ -1,6 +1,6 @@
 package com.widera.adventofcode2017.day20;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -41,5 +41,21 @@ public class ParticleTest {
 		Particle particle = new Particle(0, new Point3D(3, -2, 1), new Point3D(2, 0, 0), new Point3D(-1, 0, 0));
 		
 		assertEquals(6d, particle.distanceToZero(), DELTA);
+	}
+	
+	@Test
+	public void testParticleDie() {
+		Particle particle = new Particle(0, new Point3D(3, -2, 1), new Point3D(2, 0, 0), new Point3D(-1, 0, 0));
+		
+		assertTrue(particle.isAlive());
+		
+		particle.die();
+		
+		assertFalse(particle.isAlive());
+		
+		particle.die();
+		
+		assertFalse(particle.isAlive());
+		
 	}
 }

@@ -6,6 +6,8 @@ public class Particle {
 
 	private final int id;
 	
+	private boolean isAlive = true;
+	
 	private Point3D position;
 	private Point3D velocity;
 	private final Point3D acceleration;
@@ -15,6 +17,14 @@ public class Particle {
 		this.position = position;
 		this.velocity = velocity;
 		this.acceleration = acceleration;
+	}
+	
+	public void die() {
+		isAlive = false;
+	}
+	
+	public boolean isAlive() {
+		return isAlive;
 	}
 	
 	public void simulate() {

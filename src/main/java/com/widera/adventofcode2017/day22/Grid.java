@@ -36,6 +36,18 @@ public class Grid {
 	public boolean isInfected(int x, int y) {
 		return '#' == node(x, y);
 	}
+	
+	public boolean isWeakened(int x, int y) {
+		return 'W' == node(x, y);
+	}
+	
+	public boolean isFlagged(int x, int y) {
+		return 'F' == node(x, y);
+	}
+	
+	public boolean isClean(int x, int y) {
+		return '.' == node(x, y);
+	}
 
 	public void clean(int x, int y) {
 		field[y][x] = '.';
@@ -45,8 +57,17 @@ public class Grid {
 		field[y][x] = '#';
 		infects++;
 	}
+	
+	public void flag(int x, int y) {
+		field[y][x] = 'F';
+	}
+	
+	public void weaken(int x, int y) {
+		field[y][x] = 'W';
+	}
 
 	public int sizeOfBursts() {
 		return infects;
 	}
+
 }

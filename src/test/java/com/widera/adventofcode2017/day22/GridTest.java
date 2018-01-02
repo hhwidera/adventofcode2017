@@ -91,7 +91,56 @@ public class GridTest {
         Grid grid = new Grid(startMap, 9);
         assertTrue(grid.isInfected(4, 4));
         grid.clean(4, 4);
-        assertFalse(grid.isInfected(4, 4));
+        assertTrue(grid.isClean(4, 4));
 	}
+	
+	@Test
+	public void testIsWeakened() {
+        String[] startMap = new String[3];
+        startMap[0] = "...";
+        startMap[1] = ".W.";
+        startMap[2] = "...";
+        
+        Grid grid = new Grid(startMap, 9);
+        
+        assertTrue(grid.isWeakened(4, 4));
+	}
+	
+	@Test
+	public void testIsNotWeakened() {
+        String[] startMap = new String[3];
+        startMap[0] = "...";
+        startMap[1] = ".#.";
+        startMap[2] = "...";
+        
+        Grid grid = new Grid(startMap, 9);
+        
+        assertFalse(grid.isWeakened(2, 2));
+	}
+	
+	@Test
+	public void testIsFlagged() {
+        String[] startMap = new String[3];
+        startMap[0] = "...";
+        startMap[1] = ".F.";
+        startMap[2] = "...";
+        
+        Grid grid = new Grid(startMap, 9);
+        
+        assertTrue(grid.isFlagged(4, 4));
+	}
+	
+	@Test
+	public void testIsNotFlagged() {
+        String[] startMap = new String[3];
+        startMap[0] = "...";
+        startMap[1] = ".#.";
+        startMap[2] = "...";
+        
+        Grid grid = new Grid(startMap, 9);
+        
+        assertFalse(grid.isFlagged(2, 2));
+	}
+
 
 }

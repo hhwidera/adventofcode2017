@@ -37,4 +37,16 @@ public class BridgeBuilder {
         return result;
     }
 
+    public int longestBridge() {
+        return subBridgeBuilders.stream().map(b -> b.longestBridge()).max(Comparator.naturalOrder()).orElse(0) + 1;
+    }
+
+    public int strengthOfLongestStrongestBridge(final int lengthFilter) {
+        int result = linkComponent.getPortA() + linkComponent.getPortB();
+        result += subBridgeBuilders.stream()
+                .filter(b -> b.longestBridge() == lengthFilter - 1)
+                .map(b -> b.strengthOfLongestStrongestBridge(lengthFilter - 1))
+                .max(Comparator.naturalOrder()).orElse(0);
+        return result;
+    }
 }
